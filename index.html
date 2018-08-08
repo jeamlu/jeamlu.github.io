@@ -300,15 +300,16 @@
       
         
           
-            <h2 id="查询："><a href="#查询：" class="headerlink" title="查询："></a>查询：</h2><h3 id="一：查询所有数据"><a href="#一：查询所有数据" class="headerlink" title="一：查询所有数据"></a>一：查询所有数据</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select * from Info 查所有数据</span><br><span class="line">select Code,Name from Info 查特定列</span><br></pre></td></tr></table></figure>
-<h3 id="二：根据条件查"><a href="#二：根据条件查" class="headerlink" title="二：根据条件查"></a>二：根据条件查</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select * from Info <span class="built_in">where</span> Code=<span class="string">'p001'</span> 一个条件查询</span><br><span class="line">select * from Info <span class="built_in">where</span> Code=<span class="string">'p001'</span> and Nation=<span class="string">'n001'</span> 多条件 并关系 查询</span><br><span class="line">select * from Info <span class="built_in">where</span> Name=<span class="string">'jeamlu'</span> or Nation=<span class="string">'n001'</span> 多条件 或关系 查询</span><br><span class="line">select * from Car <span class="built_in">where</span> Price&gt;=50 and Price&lt;=60 范围查询</span><br><span class="line">select * from Car <span class="built_in">where</span> Price between 50 and 60 范围查询</span><br></pre></td></tr></table></figure>
-<h3 id="三：模糊查询"><a href="#三：模糊查询" class="headerlink" title="三：模糊查询"></a>三：模糊查询</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select * from Car <span class="built_in">where</span> Name like <span class="string">'%型'</span> %通配符代表任意多个字符</span><br><span class="line">select * from Car <span class="built_in">where</span> Name like <span class="string">'%奥迪%'</span> _通配符代表任意一个字符</span><br><span class="line">select * from Car <span class="built_in">where</span> Name like <span class="string">'_马%'</span></span><br></pre></td></tr></table></figure>
-<h3 id="四：排序"><a href="#四：排序" class="headerlink" title="四：排序"></a>四：排序</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select * from Car order by Price asc 按照价格升序排列</span><br><span class="line">select * from Car order by Price desc 按照价格降序排列</span><br><span class="line">select * from Car order by Price,Oil 按照两列进行排序，前面的为主要的</span><br></pre></td></tr></table></figure>
-<h3 id="五：统计函数（聚合函数）"><a href="#五：统计函数（聚合函数）" class="headerlink" title="五：统计函数（聚合函数）"></a>五：统计函数（聚合函数）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select count(Code) from Car 查询表中有多少条数据</span><br><span class="line">select max(Price) from Car 取价格的最大值</span><br><span class="line">select min(Price) from Car 取价格的最小值</span><br><span class="line">select sum(Price) from Car 取价格的总和</span><br><span class="line">select avg(Price) from Car 取价格的平均值</span><br></pre></td></tr></table></figure>
-<h3 id="六：分组查询"><a href="#六：分组查询" class="headerlink" title="六：分组查询"></a>六：分组查询</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select Brand from Car group by Brand having count(*)&gt;2 查询所有系列中数量大于2的</span><br></pre></td></tr></table></figure>
-<h3 id="七：分页查询"><a href="#七：分页查询" class="headerlink" title="七：分页查询"></a>七：分页查询</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from Car <span class="built_in">limit</span> 0,5 跳过几条数据取几条数据</span><br></pre></td></tr></table></figure>
-<h3 id="八：去重查询"><a href="#八：去重查询" class="headerlink" title="八：去重查询"></a>八：去重查询</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select distinct Brand from Car</span><br></pre></td></tr></table></figure>
-          
+          查询：一：查询所有数据12select * from Info 查所有数据select Code,Name from Info 查特定列
+二：根据条件查12345select * from Info where Code='p001' 一个条件查询select * from Info where C
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/02/mysql修改列名字段类型/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -426,17 +427,15 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-          
+          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/02/hello-world/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
